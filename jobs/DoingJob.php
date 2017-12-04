@@ -11,6 +11,7 @@ use yii\base\BaseObject;
 use yii\queue\Queue;
 use yii\queue\RetryableJobInterface;
 use yuncms\doing\models\Doing;
+use yuncms\user\models\User;
 
 /**
  * Class DoingJob
@@ -33,17 +34,20 @@ class DoingJob extends BaseObject implements RetryableJobInterface
      */
     public function execute($queue)
     {
-        Doing::create([
-            'user_id' => $this->user_id,
-            'action' => $this->action,
-            'model_id' => $this->model_id,
-            'model' => $this->model,
-            'subject' => $this->subject,
-            'content' => strip_tags($this->content),
-            'refer_id' => $this->refer_id,
-            'refer_user_id' => $this->refer_user_id,
-            'refer_content' => strip_tags($this->refer_content),
-        ]);
+        $user = User::findOne($this->user_id);
+        if ($user) {
+            Doing::create([
+                'user_id' => $user->id,
+                'action' => $this->action,
+                'model_id' => $this->model_id,
+                'model' => $this->model,
+                'subject' => $this->subject,
+                'content' => strip_tags($this->content),
+                'refer_id' => $this->refer_id,
+                'refer_user_id' => $this->refer_user_id,
+                'refer_content' => strip_tags($this->refer_content),
+            ]);
+        }
     }
 
     /**
