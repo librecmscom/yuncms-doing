@@ -1,0 +1,58 @@
+{
+  "name": "yuncms/yii2-doing",
+  "description": "doing",
+  "keywords": [
+    "doing",
+    "yii2",
+    "yii2-module"
+  ],
+  "type": "yii2-extension",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Xu TL",
+      "email": "xutongle@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.6",
+    "yuncms/yii2-user": "~2.0"
+  },
+  "autoload": {
+    "files": [
+      "helpers.php"
+    ],
+    "psr-4": {
+      "yuncms\\doing\\": ""
+    }
+  },
+  "extra": {
+    "yuncms": {
+      "name": "doing",
+      "i18n": {
+        "class": "yii\\i18n\\PhpMessageSource",
+        "sourceLanguage": "en-US",
+        "basePath": "@yuncms/doing/messages"
+      },
+      "migrationNamespace": "yuncms\\doing\\migrations",
+      "backend": {
+      },
+      "frontend": {
+        "class": "yuncms\\doing\\frontend\\Module"
+      }
+    },
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  ]
+}
