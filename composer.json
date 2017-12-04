@@ -1,5 +1,5 @@
 {
-  "name": "yuncms/yii2-doing",
+  "name": "yuncms/yuncms-doing",
   "description": "doing",
   "keywords": [
     "doing",
@@ -16,12 +16,9 @@
   ],
   "require": {
     "yiisoft/yii2": "~2.0.6",
-    "yuncms/yii2-user": "~2.0"
+    "yuncms/yuncms-user": "~2.0"
   },
   "autoload": {
-    "files": [
-      "helpers.php"
-    ],
     "psr-4": {
       "yuncms\\doing\\": ""
     }
@@ -42,17 +39,13 @@
       }
     },
     "branch-alias": {
-      "dev-master": "1.0-dev"
+      "dev-master": "2.0-dev"
     }
   },
   "repositories": [
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
-    },
-    {
-      "type": "composer",
-      "url": "https://packagist.phpcomposer.com"
     }
   ]
 }
